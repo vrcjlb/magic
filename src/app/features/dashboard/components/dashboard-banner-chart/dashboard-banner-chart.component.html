@@ -1,0 +1,17 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Email Sent</mat-card-title>
+      <div class="options">
+        <button mat-button>Week</button>
+        <button mat-button>Month</button>
+        <button mat-flat-button color="primary">Year</button>
+      </div>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="chart-container">
+      <canvas id="banner">{{ chart }}</canvas>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,31 @@
+<app-container>
+  <app-container-header [data]="header"></app-container-header>
+  <app-container-body>
+    <div class="row">
+      <div class="col-4">
+        <app-dashboard-welcome-user></app-dashboard-welcome-user>
+        <app-dashboard-range></app-dashboard-range>
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <ng-container *ngFor="let card of miniCard">
+            <app-dashboard-mini-card
+              class="col-4"
+              [data]="card"
+            ></app-dashboard-mini-card>
+          </ng-container>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <app-dashboard-banner-chart></app-dashboard-banner-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <app-dashboard-tracking></app-dashboard-tracking>
+      </div>
+    </div>
+  </app-container-body>
+</app-container>

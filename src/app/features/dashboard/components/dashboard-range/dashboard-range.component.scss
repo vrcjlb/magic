@@ -1,0 +1,29 @@
+mat-card {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: none;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 1rem;
+  mat-card-header {
+    padding: 20px 16px;
+  }
+  mat-card-content {
+    .money-value {
+      font-size: 22px;
+    }
+    .description {
+      display: flex;
+      gap: 1rem;
+      font-size: 13px;
+      color: #74788d;
+      span {
+        color: #34c38f;
+      }
+    }
+    .text {
+      color: #74788d;
+    }
+  }
+}

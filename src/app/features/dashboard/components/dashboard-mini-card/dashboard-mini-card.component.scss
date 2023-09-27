@@ -1,0 +1,11 @@
+mat-card {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: none;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  mat-card-header {
+    padding: 20px 16px;
+  }
+}
