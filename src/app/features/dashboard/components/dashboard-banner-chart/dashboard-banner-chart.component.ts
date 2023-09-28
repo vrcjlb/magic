@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import Chart from 'chart.js/auto';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { BarChartService } from 'src/app/shared/services';
 
 @Component({
   standalone: true,
-  imports: [MatCardModule, MatIconModule, MatButtonModule],
+  imports:  [],
   selector: 'app-dashboard-banner-chart',
   templateUrl: './dashboard-banner-chart.component.html',
   styleUrls: ['./dashboard-banner-chart.component.scss'],

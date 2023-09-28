@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
-import { MatChipsModule } from '@angular/material/chips';
 
 export interface PeriodicElement {
   orderID: string;
@@ -164,13 +160,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   standalone: true,
-  imports: [
-    MatCardModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTableModule,
-    MatChipsModule,
-  ],
+  imports: [MatTableModule],
   selector: 'app-dashboard-tracking',
   templateUrl: './dashboard-tracking.component.html',
   styleUrls: ['./dashboard-tracking.component.scss'],

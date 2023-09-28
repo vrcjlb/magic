@@ -1,15 +1,53 @@
-mat-card {
+.card {
   width: 100%;
   background-color: #ffffff;
   box-shadow: none;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  mat-card-header {
+  padding-bottom: 1rem;
+  &:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  .card-header {
     padding: 20px 16px;
+    .card-title-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      color: #2e2e2e;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+    }
     .options {
       display: flex;
       gap: 10px;
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: #74788d;
+        &:hover {
+          color: #556ee6;
+        }
+        &.active {
+          background-color: #556ee6;
+          color: #ffffff;
+          border-radius: 4px;
+          padding: 5px 10px;
+          &:hover {
+            background-color: #556ee6;
+            color: #ffffff;
+          }
+        }
+      }
     }
+  }
+  .card-content {
+    padding: 0 1rem;
   }
 }

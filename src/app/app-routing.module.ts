@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./features/').then((m) => m.StorageModule),
   },
   {
-    path: 'storage',
+    path: 'storage2',
     loadChildren: () => import('./features').then((m) => m.StorageModule),
   },
   // Repite para otros módulos

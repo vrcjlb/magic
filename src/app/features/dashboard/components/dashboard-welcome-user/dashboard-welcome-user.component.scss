@@ -1,22 +1,31 @@
-mat-card {
+.card {
   width: 100%;
   background-color: #d5dafa;
   box-shadow: none;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  mat-card-header {
-    padding-bottom: 2rem;
+  &:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  .card-header {
     background-image: url(https://themesbrand.com/skote/layouts/assets/images/profile-img.png);
     background-position: 100% 0;
     background-repeat: no-repeat;
     background-size: 160px;
-    mat-card-title,
-    mat-card-subtitle {
+    padding: 1rem 1rem 2rem 1rem;
+    .card-title,
+    .card-subtitle {
       color: #556ee6;
+      padding: 4px;
+    }
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
     }
   }
-  mat-card-content {
+  .card-content {
     background-color: #ffffff;
     height: 120px;
     .basic-information {
@@ -48,6 +57,22 @@ mat-card {
       margin-top: 10px;
       max-height: 30px;
       padding: 0 10px;
+      background-color: #556ee6;
+      color: #ffffff;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      gap: 10px;
+      cursor: pointer;
+      border: none;
+      padding: 10px;
+      &:hover {
+        background-color: #3f4ea0;
+      }
     }
     p {
       margin: 0;

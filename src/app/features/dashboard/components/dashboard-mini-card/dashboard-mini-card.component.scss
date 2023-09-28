@@ -1,11 +1,40 @@
-mat-card {
+.card {
   width: 100%;
   background-color: #ffffff;
   box-shadow: none;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  mat-card-header {
+  &:hover{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  .card-header {
     padding: 20px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .card-title-group {
+      display: flex;
+      flex-direction: column;
+    }
+    button {
+      background-color: #556ee6;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      color: #ffffff;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin: 0;
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: #000000;
+      }
+    }
   }
 }
