@@ -1,0 +1,11 @@
+.content-dashboard {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  .profile {
+    width: 430px;
+  }
+  .metrics {
+    width: calc(100% - 430px);
+  }
+}

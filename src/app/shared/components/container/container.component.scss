@@ -1,7 +1,17 @@
 mat-grid-list {
   background-color: #f6f6f9;
-  .content {
-    height: 100vh;
-    overflow: auto;
+  width: 100%;
+  .web {
+    display: flex;
+    .content {
+      width: calc(100% - 250px);
+      height: 100vh;
+      overflow: auto;
+      .cover {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    }
   }
 }

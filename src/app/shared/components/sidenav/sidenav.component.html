@@ -1,33 +1,16 @@
 <div class="sidenav">
   <img src="./../../../../assets/images/logo.svg" alt="" />
-  <mat-accordion class="example-headers-align" multi>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title> Personal data </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-          <mat-icon>account_circle</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title> Destination </mat-panel-title>
-        <mat-panel-description>
-          Type the country name
-          <mat-icon>map</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title> Day of the trip </mat-panel-title>
-        <mat-panel-description>
-          Inform the date you wish to travel
-          <mat-icon>date_range</mat-icon>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-    </mat-expansion-panel>
-  </mat-accordion>
+  <mat-nav-list>
+    <mat-list-item *ngFor="let item of menu">
+      <ng-container *ngIf="item.subMenu">
+        <button mat-button [matMenuTriggerFor]="subMenu">{{ item.label }}</button>
+      </ng-container>
+      <ng-container *ngIf="!item.subMenu">
+        <button mat-button>{{ item.label }}</button>
+      </ng-container>
+      <mat-menu #subMenu="matMenu">
+        <button mat-menu-item *ngFor="let subItem of item.subMenu">{{ subItem.label }}</button>
+      </mat-menu>
+    </mat-list-item>
+  </mat-nav-list>
 </div>

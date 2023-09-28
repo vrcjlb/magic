@@ -1,12 +1,12 @@
 <app-container>
   <app-container-header [data]="header"></app-container-header>
   <app-container-body>
-    <div class="row">
-      <div class="col-4">
+    <div class="content-dashboard">
+      <div class="profile">
         <app-dashboard-welcome-user></app-dashboard-welcome-user>
         <app-dashboard-range></app-dashboard-range>
       </div>
-      <div class="col-8">
+      <div class="metrics">
         <div class="row">
           <ng-container *ngFor="let card of miniCard">
             <app-dashboard-mini-card
