@@ -8,6 +8,14 @@
       width: calc(100% - 250px);
       height: 100vh;
       overflow: auto;
+      position: relative;
+      app-toolbar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+      }
       .cover {
         width: 100%;
         max-width: 1200px;

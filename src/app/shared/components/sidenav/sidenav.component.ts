@@ -1,56 +1,72 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf, DatePipe } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
-  imports: [],
+  imports: [NgFor, NgIf],
 })
 export class SidenavComponent {
   menu = [
     {
       label: 'Dashboard',
       icon: 'dashboard',
-      link: '/dashboard',
+    },
+    {
+      label: 'Productos',
+      icon: 'shopping_cart',
+      showSubMenu: false,
       subMenu: [
-        {
-          label: 'Dashboard',
-          icon: 'dashboard',
-          link: '/dashboard',
-        },
-        {
-          label: 'Dashboard 2',
-          icon: 'dashboard',
-          link: '/dashboard2',
-        },
+        { label: 'Lista de Productos' },
+        { label: 'Detalle de producto' },
+        { label: 'Añadir Producto' },
       ],
     },
     {
-      label: 'User',
-      icon: 'people',
-      link: '/user',
+      label: 'Clientes',
+      icon: 'person',
+      showSubMenu: false,
+      subMenu: [
+        { label: 'Lista de Clientes' },
+        { label: 'Detalle de Cliente' },
+        { label: 'Añadir Cliente' },
+      ],
     },
     {
-      label: 'Product',
-      icon: 'shopping_cart',
-      link: '/product',
+      label: 'Proveedores',
+      icon: 'local_shipping',
+      showSubMenu: false,
+      subMenu: [
+        { label: 'Lista de Proveedores' },
+        { label: 'Detalle de Proveedor' },
+        { label: 'Añadir Proveedor' },
+      ],
     },
     {
-      label: 'Order',
+      label: 'Compras y ventas',
       icon: 'shopping_basket',
-      link: '/order',
+      showSubMenu: false,
+      subMenu: [
+        { label: 'Ordenes' },
+        { label: 'Carrito' },
+        { label: 'Confirmación' },
+        { label: 'Tiendas' },
+      ],
     },
     {
-      label: 'Report',
-      icon: 'report',
-      link: '/report',
-    },
-    {
-      label: 'Setting',
-      icon: 'settings',
-      link: '/setting',
+      label: 'Facturación',
+      icon: 'receipt',
+      showSubMenu: false,
+      subMenu: [
+        { label: 'Lista de facturas' },
+        { label: 'Detalle de Factura' },
+      ],
     },
   ];
+
+  toggleSubMenu(item: any) {
+    item.showSubMenu = !item.showSubMenu;
+  }
 }

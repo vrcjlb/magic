@@ -1,0 +1,43 @@
+.toolbar {
+  align-items: center;
+  box-sizing: border-box;
+  color: rgb(73, 80, 87);
+  background-color: #ffffff;
+  display: flex;
+  font-size: 13px;
+  font-weight: 400;
+  height: 70px;
+  justify-content: flex-start;
+  line-height: 19.5px;
+  margin: 0px;
+  padding: 0px;
+  padding-right: 12px;
+  text-align: start;
+  .spacer{ 
+    flex: 1 1 auto;
+  }
+  .toolbar-item {
+    height: 70px;
+    line-height: 55px;
+    padding: 7.5px 12px;
+    box-shadow: none;
+    color: #555b6d;
+    border: 0;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: #e7e8ed;
+      color: #555b6d;
+    }
+  }
+}

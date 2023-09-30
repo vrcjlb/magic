@@ -1,6 +1,34 @@
 <div class="sidenav">
-  <img src="./../../../../assets/images/logo.svg" alt="" />
-  <!-- <mat-nav-list>
+  <img class="logo" src="./../../../../assets/images/logo.webp" alt="" />
+  <div class="nav-list">
+    <span class="nav-list-title">Menu</span>
+    <div class="nav-item" *ngFor="let item of menu">
+      <button (click)="toggleSubMenu(item)">
+        <div class="text">
+          <i class="icon material-icons-outlined">{{ item.icon }}</i>
+          <span>{{ item.label }}</span>
+        </div>
+        <i
+          *ngIf="item.subMenu"
+          class="arrow material-icons-outlined"
+          [class.up]="item.showSubMenu"
+          >keyboard_arrow_down</i
+        >
+      </button>
+      <ng-container *ngIf="item.showSubMenu">
+        <ng-container *ngFor="let subItem of item.subMenu">
+          <div class="nav-sub-item" [class.sub-menu-visible]="item.showSubMenu">
+            <button>
+              <span>{{ subItem.label }}</span>
+            </button>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<!-- <mat-nav-list>
     <mat-list-item *ngFor="let item of menu">
       <ng-container *ngIf="item.subMenu">
         <button mat-button [matMenuTriggerFor]="subMenu">{{ item.label }}</button>
@@ -13,4 +41,3 @@
       </mat-menu>
     </mat-list-item>
   </mat-nav-list> -->
-</div>
