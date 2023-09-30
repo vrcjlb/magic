@@ -3,22 +3,23 @@
   <div class="nav-list">
     <span class="nav-list-title">Menu</span>
     <div class="nav-item" *ngFor="let item of menu">
-      <button (click)="toggleSubMenu(item)">
+      <button (click)="toggleSubMenu(item)" *ngIf="item.subMenu">
         <div class="text">
           <i class="icon material-icons-outlined">{{ item.icon }}</i>
           <span>{{ item.label }}</span>
         </div>
-        <i
-          *ngIf="item.subMenu"
-          class="arrow material-icons-outlined"
-          [class.up]="item.showSubMenu"
-          >keyboard_arrow_down</i
-        >
+        <i class="arrow material-icons-outlined" [class.up]="item.showSubMenu">keyboard_arrow_down</i>
+      </button>
+      <button [routerLink]="item?.link"  *ngIf="!item.subMenu">
+        <div class="text">
+          <i class="icon material-icons-outlined">{{ item.icon }}</i>
+          <span>{{ item.label }}</span>
+        </div>
       </button>
       <ng-container *ngIf="item.showSubMenu">
         <ng-container *ngFor="let subItem of item.subMenu">
           <div class="nav-sub-item" [class.sub-menu-visible]="item.showSubMenu">
-            <button>
+            <button [routerLink]="subItem?.link">
               <span>{{ subItem.label }}</span>
             </button>
           </div>
@@ -27,17 +28,3 @@
     </div>
   </div>
 </div>
-
-<!-- <mat-nav-list>
-    <mat-list-item *ngFor="let item of menu">
-      <ng-container *ngIf="item.subMenu">
-        <button mat-button [matMenuTriggerFor]="subMenu">{{ item.label }}</button>
-      </ng-container>
-      <ng-container *ngIf="!item.subMenu">
-        <button mat-button>{{ item.label }}</button>
-      </ng-container>
-      <mat-menu #subMenu="matMenu">
-        <button mat-menu-item *ngFor="let subItem of item.subMenu">{{ subItem.label }}</button>
-      </mat-menu>
-    </mat-list-item>
-  </mat-nav-list> -->
