@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products.component';
 import { ListOfProductsComponent } from './pages/list-of-products/list-of-products.component';
+import { DetailOfProductComponent } from './pages/detail-of-product/detail-of-product.component';
 
 const routes: Routes = [
   {
@@ -9,11 +10,19 @@ const routes: Routes = [
     component: ProductsComponent,
     children: [
       {
-        path: '',
+        path: 'list',
         component: ListOfProductsComponent,
+      },
+      {
+        path: 'detail',
+        component: DetailOfProductComponent,
       },
     ],
   },
+  {
+    path: '**',
+    redirectTo: 'list',
+  }
 ];
 
 @NgModule({

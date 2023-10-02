@@ -1,23 +1,28 @@
 <div class="card">
-  <img
-    class="card-img-top"
-    src="https://themesbrand.com/skote/layouts/assets/images/product/img-2.png"
-    alt=""
-  />
+  <div class="card-discount">-{{ data.discount }}</div>
+  <img class="card-img-top" src="{{ data.image[0].imageUrl }}" alt="" />
   <div class="card-body">
-    <h5 class="card-title">Light blue T-shirt</h5>
+    <h5 class="card-title">{{ data.name }}</h5>
     <div class="card-description">
       <div class="stars">
-        <i class="star active material-icons-outlined">star</i>
-        <i class="star active material-icons-outlined">star</i>
-        <i class="star active material-icons-outlined">star</i>
-        <i class="star active material-icons-outlined">star</i>
-        <i class="star material-icons-outlined">star</i>
+        <div class="star" *ngFor="let star of [].constructor(data.stars)">
+          ★
+        </div>
+        <div
+          class="star star-grey"
+          *ngFor="let star of [].constructor(5 - +data.stars)"
+        >
+          ★
+        </div>
       </div>
     </div>
     <div class="price">
-      <span class="price-old">$ 199</span>
-      <span class="price-new">$ 99</span>
+      <span class="price-old">{{
+        data.oldPrice.currency + " " + data.oldPrice.value
+      }}</span>
+      <span class="price-new">{{
+        data.newPrice.currency + " " + data.newPrice.value
+      }}</span>
     </div>
   </div>
 </div>

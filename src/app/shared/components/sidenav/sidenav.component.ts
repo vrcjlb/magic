@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, RouterLink],
 })
 export class SidenavComponent {
   menu = [
     {
+      link: '',
       label: 'Dashboard',
       icon: 'dashboard',
     },
@@ -19,9 +21,9 @@ export class SidenavComponent {
       icon: 'shopping_cart',
       showSubMenu: false,
       subMenu: [
-        { label: 'Lista de Productos' },
-        { label: 'Detalle de producto' },
-        { label: 'Añadir Producto' },
+        { link: '/products/list', label: 'Lista de Productos' },
+        { link: '/products/detail', label: 'Detalle de producto' },
+        { link: '/products/detail', label: 'Añadir Producto' },
       ],
     },
     {
@@ -29,9 +31,9 @@ export class SidenavComponent {
       icon: 'person',
       showSubMenu: false,
       subMenu: [
-        { label: 'Lista de Clientes' },
-        { label: 'Detalle de Cliente' },
-        { label: 'Añadir Cliente' },
+        { link: '', label: 'Lista de Clientes' },
+        { link: '', label: 'Detalle de Cliente' },
+        { link: '', label: 'Añadir Cliente' },
       ],
     },
     {
@@ -39,9 +41,9 @@ export class SidenavComponent {
       icon: 'local_shipping',
       showSubMenu: false,
       subMenu: [
-        { label: 'Lista de Proveedores' },
-        { label: 'Detalle de Proveedor' },
-        { label: 'Añadir Proveedor' },
+        { link: '', label: 'Lista de Proveedores' },
+        { link: '', label: 'Detalle de Proveedor' },
+        { link: '', label: 'Añadir Proveedor' },
       ],
     },
     {
@@ -49,10 +51,10 @@ export class SidenavComponent {
       icon: 'shopping_basket',
       showSubMenu: false,
       subMenu: [
-        { label: 'Ordenes' },
-        { label: 'Carrito' },
-        { label: 'Confirmación' },
-        { label: 'Tiendas' },
+        { link: '', label: 'Ordenes' },
+        { link: '', label: 'Carrito' },
+        { link: '', label: 'Confirmación' },
+        { link: '', label: 'Tiendas' },
       ],
     },
     {
@@ -60,8 +62,8 @@ export class SidenavComponent {
       icon: 'receipt',
       showSubMenu: false,
       subMenu: [
-        { label: 'Lista de facturas' },
-        { label: 'Detalle de Factura' },
+        { link: '', label: 'Lista de facturas' },
+        { link: '', label: 'Detalle de Factura' },
       ],
     },
   ];

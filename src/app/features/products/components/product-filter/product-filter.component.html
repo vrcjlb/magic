@@ -1,0 +1,43 @@
+<div class="content">
+  <p class="content-title">Filtro</p>
+  <div class="section no-margin">
+    <p class="section-title">Categoria</p>
+    <ul class="section-content">
+      <li *ngFor="let category of filters.categories" class="section-content-item">
+        <input type="checkbox" name="category" [value]="category.id" [id]="'category_'+category.id" [checked]="category.checked"
+          (change)="category.checked = !category.checked; filterAction()">
+        <label for="{{'category_'+category.id}}">{{category.name}}</label>
+      </li>
+    </ul>
+  </div>
+  <div class="section">
+    <p class="section-title">Precio</p>
+    <ul class="section-content">
+      <li *ngFor="let price of filters.prices" class="section-content-item">
+        <input type="checkbox" name="price" [value]="price.id" [id]="'price_'+price.id" [checked]="price.checked"
+          (change)="price.checked = !price.checked; filterAction()">
+        <label for="{{'price_'+price.id}}">{{price.name}}</label>
+      </li>
+    </ul>
+  </div>
+  <div class="section">
+    <p class="section-title">Producto</p>
+    <ul class="section-content">
+      <li *ngFor="let product of filters.discount" class="section-content-item">
+        <input type="checkbox" name="product" [value]="product.id" [id]="'product_'+product.id"
+          [checked]="product.checked" (change)="product.checked = !product.checked; filterAction()">
+        <label for="{{'product_'+product.id}}">{{product.name}}</label>
+      </li>
+    </ul>
+  </div>
+  <div class="section">
+    <p class="section-title">Valoración</p>
+    <ul class="section-content">
+      <li *ngFor="let item of filters.stars" class="section-content-item">
+        <input type="checkbox" name="item" [value]="item.id" [id]="'item_'+item.id" [checked]="item.checked"
+          (change)="item.checked = !item.checked; filterAction()">
+        <label for="{{'item_'+item.id}}" class="star">{{item.name}}</label>
+      </li>
+    </ul>
+  </div>
+</div>

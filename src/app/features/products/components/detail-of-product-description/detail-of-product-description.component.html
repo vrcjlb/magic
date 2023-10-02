@@ -1,0 +1,46 @@
+<div class="content">
+  <div class="category">{{ data.category }}</div>
+  <div class="name">{{ data.name }}</div>
+  <div class="ranking">
+    <div class="stars">
+      <div class="star" *ngFor="let star of [].constructor(data.stars)">★</div>
+      <div
+        class="star star-grey"
+        *ngFor="let star of [].constructor(5 - +data.stars)"
+      >
+        ★
+      </div>
+    </div>
+    <div class="review-count">{{ data.reviewCount }} Revisores</div>
+  </div>
+  <div class="discount">{{ data.discount }} de descuento</div>
+  <div class="price">
+    <div class="old-price">
+      <span class="currency">{{ data.oldPrice.currency }}</span>
+      <span class="value">{{ data.oldPrice.value }}</span>
+    </div>
+    <div class="new-price">
+      <span class="currency">{{ data.newPrice.currency }}</span>
+      <span class="value">{{ data.newPrice.value }}</span>
+    </div>
+  </div>
+  <div class="description">
+    <div class="text">{{ data.description }}</div>
+  </div>
+  <div class="detail-list">
+    <div class="detail-list-item" *ngFor="let detail of data.details">
+      <i class="material-icons-outlined">{{ detail.icon }}</i>
+      <div class="detail-list-item-value">{{ detail.text }}</div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-cart">
+      <i class="material-icons-outlined">shopping_cart</i>
+      Agregar al carrito
+    </button>
+    <button class="btn buy-now">
+      <i class="material-icons-outlined">shopping_bag</i>
+      Comprar ahora
+    </button>
+  </div>
+</div>

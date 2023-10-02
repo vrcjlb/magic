@@ -1,20 +1,17 @@
-import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  selector: 'app-detail-of-product-description',
   standalone: true,
-  selector: 'app-product-mini-card-view',
-  templateUrl: './product-mini-card-view.component.html',
-  styleUrls: ['./product-mini-card-view.component.scss'],
-  imports: [NgFor],
+  imports: [CommonModule],
+  templateUrl: './detail-of-product-description.component.html',
+  styleUrls: ['./detail-of-product-description.component.scss'],
 })
-export class ProductMiniCardViewComponent {
+export class DetailOfProductDescriptionComponent {
   @Input() data!: {
     category: string;
     name: string;
-    image: {
-      imageUrl: string;
-    }[];
     stars: number;
     reviewCount: string;
     discount: string;

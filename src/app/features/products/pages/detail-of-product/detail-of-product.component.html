@@ -1,1 +1,13 @@
-<p>detail-of-product works!</p>
+<app-container>
+  <app-container-header [data]="header"></app-container-header>
+  <app-container-body>
+    <div class="container">
+      <app-detail-of-product-image
+        [data]="detail.images"
+      ></app-detail-of-product-image>
+      <app-detail-of-product-description
+        [data]="detail"
+      ></app-detail-of-product-description>
+    </div>
+  </app-container-body>
+</app-container>

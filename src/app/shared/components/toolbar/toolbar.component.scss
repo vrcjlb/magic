@@ -13,7 +13,8 @@
   padding: 0px;
   padding-right: 12px;
   text-align: start;
-  .spacer{ 
+  box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+  .spacer {
     flex: 1 1 auto;
   }
   .toolbar-item {
@@ -39,5 +40,44 @@
       background-color: #e7e8ed;
       color: #555b6d;
     }
+  }
+}
+.tada {
+  animation: tada 1s ease-in-out;
+}
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes tada {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+  }
+  40%,
+  60%,
+  80% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
   }
 }

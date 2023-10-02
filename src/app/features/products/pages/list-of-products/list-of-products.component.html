@@ -1,26 +1,37 @@
-<div class="container">
-  <div class="filter">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere quisquam in
-    temporibus saepe, quos omnis deserunt at iste, dignissimos eaque totam minus
-    laborum vel voluptate hic porro neque itaque eum?
-  </div>
-  <div class="result">
-    <div class="result-header">
-      <div class="result-title">Polos</div>
-      <div class="result-sort">
-        <div class="sort-label">asd</div>
-        <div class="sort-label">sort-select</div>
+<app-container>
+  <app-container-header [data]="header"></app-container-header>
+  <app-container-body>
+    <div class="container">
+      <div class="filter">
+        <app-product-filter
+          (filterEvent)="filterEvent($event)"
+          [products]="products"
+        ></app-product-filter>
+      </div>
+      <div class="result">
+        <div class="result-header">
+          <div class="result-title">Productos</div>
+          <div class="result-sort">
+            <div class="sort-label">
+              <input
+                (input)="filterSearch($event)"
+                type="search"
+                name="search"
+                class="search"
+                id="search"
+                placeholder="Filtrar..."
+              />
+              <i class="material-icons-outlined">search</i>
+            </div>
+          </div>
+        </div>
+        <div class="list-of-products">
+          <app-product-mini-card-view
+            *ngFor="let product of productsFiltered"
+            [data]="product"
+          ></app-product-mini-card-view>
+        </div>
       </div>
     </div>
-    <div class="list-of-products">
-      <app-product-mini-card-view></app-product-mini-card-view>
-      <app-product-mini-card-view></app-product-mini-card-view>
-      <app-product-mini-card-view></app-product-mini-card-view>
-      <app-product-mini-card-view></app-product-mini-card-view>
-      <app-product-mini-card-view></app-product-mini-card-view>
-      <app-product-mini-card-view></app-product-mini-card-view>
-      <app-product-mini-card-view></app-product-mini-card-view>
-      <app-product-mini-card-view></app-product-mini-card-view>
-    </div>
-  </div>
-</div>
+  </app-container-body>
+</app-container>
