@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="title">Información básica</div>
+  <div class="sub-title">Complete toda la información a continuación</div>
+  <form class="form" [formGroup]="form">
+    <div class="input">
+      <label for="name">Nombre del producto</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nombre del producto"
+        formControlName="name"
+      />
+    </div>
+    <div class="input">
+      <label for="name">Categoria</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Categoria"
+        formControlName="category"
+      />
+    </div>
+    <div class="input">
+      <label for="name">Nombre del fabricante</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nombre del fabricante"
+        formControlName="brand"
+      />
+    </div>
+    <div class="input">
+      <label for="name">Caracteristicas</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nombre del fabricante"
+        formControlName="tags"
+      />
+    </div>
+    <div class="input">
+      <label for="name">Precio</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Precio"
+        formControlName="price"
+      />
+    </div>
+    <div class="input">
+      <label for="name">Descripción</label>
+      <textarea
+        type="text"
+        class="form-control"
+        placeholder="Descripción"
+        formControlName="description"
+      ></textarea>
+    </div>
+  </form>
+  <div class="actions">
+    <button class="btn btn-primary" (click)="saveForm()">Guardar cambios</button>
+    <button class="btn" (click)="cleanForm()">Cancelar</button>
+  </div>
+</div>

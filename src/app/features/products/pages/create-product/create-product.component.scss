@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  .col-12 {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+}

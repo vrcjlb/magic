@@ -1,1 +1,18 @@
-<p>create-product works!</p>
+<app-container>
+  <app-container-header [data]="header"></app-container-header>
+  <app-container-body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <app-create-product-basic-information></app-create-product-basic-information>
+        </div>
+        <div class="col-12">
+          <app-create-product-images></app-create-product-images>
+        </div>
+        <div class="col-12">
+          <app-create-product-meta-data></app-create-product-meta-data>
+        </div>
+      </div>
+    </div>
+  </app-container-body>
+</app-container>

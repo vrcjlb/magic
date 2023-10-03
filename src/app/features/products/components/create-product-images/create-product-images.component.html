@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="title">Imagenes del producto</div>
+  <div class="input hide">
+    <input type="file" (change)="onFileSelected($event)" #file multiple />
+  </div>
+  <div class="image-list" (click)="file.click()">
+    <div class="message" *ngIf="!listOfImages.length">
+      <i class="icon material-icons-outlined">cloud_upload</i>
+      Suelte los archivos aquí o haga clic para subirlos.
+    </div>
+    <ng-container *ngIf="listOfImages.length">
+      <div class="image" *ngFor="let item of listOfImages; let index = index">
+        <img alt="" [src]="getImageFromBase64String(item)" />
+        <div class="info">
+          <div class="text size">{{ getMegabitsFromBytes(listOfFiles[index].size) }}</div>
+          <div class="text name" [title]="listOfFiles[index].name">{{ listOfFiles[index].name }}</div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -23,7 +23,7 @@ export class SidenavComponent {
       subMenu: [
         { link: '/products/list', label: 'Lista de Productos' },
         { link: '/products/detail', label: 'Detalle de producto' },
-        { link: '/products/detail', label: 'Añadir Producto' },
+        { link: '/products/create', label: 'Añadir Producto' },
       ],
     },
     {
